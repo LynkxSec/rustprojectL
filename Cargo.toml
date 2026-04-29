@@ -1,0 +1,12 @@
+[package]
+name = "network-examples"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+cmake = "0.1.58"
+console-subscriber = "0.4.1"
+cxx-juce = "0.8.0"
+hound = "3.5.1"
+ringbuf = "0.4.8"
+tokio = { version = "1.44.2", features = ["full", "time", "tracing"] }
