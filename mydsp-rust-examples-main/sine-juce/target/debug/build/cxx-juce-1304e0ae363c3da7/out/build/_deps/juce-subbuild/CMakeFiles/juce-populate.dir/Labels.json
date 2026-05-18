@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/juce-populate"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/79c13a02bfb5f287809c91568648eeb8/juce-populate.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/6b58c41ce72a03b814d96527a1be76d5/juce-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/7ca0e6b2c955f4e104004c64b3f0efd2/juce-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/7ca0e6b2c955f4e104004c64b3f0efd2/juce-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/7ca0e6b2c955f4e104004c64b3f0efd2/juce-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/7ca0e6b2c955f4e104004c64b3f0efd2/juce-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/7ca0e6b2c955f4e104004c64b3f0efd2/juce-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/7ca0e6b2c955f4e104004c64b3f0efd2/juce-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/7ca0e6b2c955f4e104004c64b3f0efd2/juce-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/CMakeFiles/7ca0e6b2c955f4e104004c64b3f0efd2/juce-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"juce-populate"
+		],
+		"name" : "juce-populate"
+	}
+}

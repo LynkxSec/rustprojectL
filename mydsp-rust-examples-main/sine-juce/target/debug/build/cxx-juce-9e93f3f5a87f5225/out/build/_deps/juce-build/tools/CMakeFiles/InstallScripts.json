@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-9e93f3f5a87f5225/out/build/_deps/juce-build/tools/cmake_install.cmake",
+		"C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-9e93f3f5a87f5225/out/build/_deps/juce-build/tools/modules/cmake_install.cmake",
+		"C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-9e93f3f5a87f5225/out/build/_deps/juce-build/tools/extras/Build/cmake_install.cmake",
+		"C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-9e93f3f5a87f5225/out/build/_deps/juce-build/tools/extras/Build/juceaide/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

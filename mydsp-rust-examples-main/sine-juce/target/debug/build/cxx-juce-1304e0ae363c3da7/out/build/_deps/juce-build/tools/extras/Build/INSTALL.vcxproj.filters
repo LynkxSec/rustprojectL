@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\sine-juce\target\debug\build\cxx-juce-1304e0ae363c3da7\out\build\_deps\juce-build\tools\CMakeFiles\7206b9963c4182c9eb1bd9bb0786c7d4\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A945D1F5-D829-3C42-9DF8-351816AFB3C7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,68 @@
+cargo:rerun-if-changed=src/lib.rs
+cargo:CXXBRIDGE_PREFIX=cxx-juce
+cargo:CXXBRIDGE_DIR0=C:\Users\louis\Rust\mydsp-rust-examples-main\sine-juce\target\debug\build\cxx-juce-1304e0ae363c3da7\out\cxxbridge\include
+cargo:CXXBRIDGE_DIR1=C:\Users\louis\Rust\mydsp-rust-examples-main\sine-juce\target\debug\build\cxx-juce-1304e0ae363c3da7\out\cxxbridge\crate
+CMAKE_TOOLCHAIN_FILE_x86_64-pc-windows-msvc = None
+CMAKE_TOOLCHAIN_FILE_x86_64_pc_windows_msvc = None
+HOST_CMAKE_TOOLCHAIN_FILE = None
+CMAKE_TOOLCHAIN_FILE = None
+CMAKE_GENERATOR_x86_64-pc-windows-msvc = None
+CMAKE_GENERATOR_x86_64_pc_windows_msvc = None
+HOST_CMAKE_GENERATOR = None
+CMAKE_GENERATOR = None
+CMAKE_PREFIX_PATH_x86_64-pc-windows-msvc = None
+CMAKE_PREFIX_PATH_x86_64_pc_windows_msvc = None
+HOST_CMAKE_PREFIX_PATH = None
+CMAKE_PREFIX_PATH = None
+CMAKE_x86_64-pc-windows-msvc = None
+CMAKE_x86_64_pc_windows_msvc = None
+HOST_CMAKE = None
+CMAKE = None
+-- Selecting Windows SDK version 10.0.26100.0 to target Windows 10.0.26200.
+-- The C compiler identification is MSVC 19.51.36237.0
+-- The CXX compiler identification is MSVC 19.51.36237.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/Program Files/Microsoft Visual Studio/18/Insiders/VC/Tools/MSVC/14.51.36231/bin/Hostx64/x64/cl.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Fetching JUCE 7.0.12...
+-- Configuring juceaide
+-- Building juceaide
+-- Exporting juceaide
+-- Using bindings at C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/cxxbridge
+-- Configuring done (51.7s)
+-- Generating done (0.1s)
+-- Build files have been written to: C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build
+MSBuild version 18.6.1+e5ebe1565 for .NET Framework
+
+  Checking File Globs
+  1>Checking Build System
+  Building Custom Rule C:/Users/louis/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cxx-juce-0.8.0/bridge/CMakeLists.txt
+  cxx_juce.cpp
+  cxx_juce_bindings.cpp
+  cxx_juce_iir_filter.cpp
+  cxx_juce_audio_callback_wrapper.cpp
+  cxx_juce_audio_device_setup.cpp
+  cxx_juce_audio_device_manager.cpp
+  cxx_juce_system_audio_volume.cpp
+  cxx_juce_audio_io_device_type.cpp
+  cxx_juce_audio_io_device.cpp
+  juce_audio_basics.cpp
+  juce_core.cpp
+  juce_audio_devices.cpp
+  juce_events.cpp
+  cxx-juce.vcxproj -> C:\Users\louis\Rust\mydsp-rust-examples-main\sine-juce\target\debug\build\cxx-juce-1304e0ae363c3da7\out\build\cxx-juce_artefacts\RelWithDebInfo\cxx-juce.lib
+cargo:root=C:\Users\louis\Rust\mydsp-rust-examples-main\sine-juce\target\debug\build\cxx-juce-1304e0ae363c3da7\out
+cargo:rerun-if-changed=src/lib.rs
+cargo:rerun-if-changed=bridge
+cargo:rerun-if-env-changed=CXX_JUCE_ASIO_SDK_DIR
+cargo:rustc-link-search=native=C:\Users\louis\Rust\mydsp-rust-examples-main\sine-juce\target\debug\build\cxx-juce-1304e0ae363c3da7\out/build/cxx-juce_artefacts/RelWithDebInfo
+cargo:rustc-link-lib=static=cxx-juce
+cargo:rustc-link-lib=dylib=shell32
+cargo:rustc-link-lib=dylib=ole32
