@@ -1,0 +1,150 @@
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\F0D8EB9B3BF641C8945E039874C4717D\JUCE-POPULATE-MKDIR.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -Dcfgdir=/Debug -P C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/tmp/juce-populate-mkdirs.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/src/juce-populate-stamp/Debug/juce-populate-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\F0D8EB9B3BF641C8945E039874C4717D\JUCE-POPULATE-DOWNLOAD.RULE
+setlocal
+cd C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-jack\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/tmp/juce-populate-gitclone.cmake
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/src/juce-populate-stamp/Debug/juce-populate-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\F0D8EB9B3BF641C8945E039874C4717D\JUCE-POPULATE-UPDATE.RULE
+setlocal
+cd C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-jack\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-src
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -Dcan_fetch=YES -DCMAKE_MESSAGE_LOG_LEVEL=VERBOSE -P C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/tmp/juce-populate-gitupdate.cmake
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\F0D8EB9B3BF641C8945E039874C4717D\JUCE-POPULATE-PATCH.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/src/juce-populate-stamp/Debug/juce-populate-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\F0D8EB9B3BF641C8945E039874C4717D\JUCE-POPULATE-CONFIGURE.RULE
+setlocal
+cd C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-jack\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/src/juce-populate-stamp/Debug/juce-populate-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\F0D8EB9B3BF641C8945E039874C4717D\JUCE-POPULATE-BUILD.RULE
+setlocal
+cd C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-jack\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/src/juce-populate-stamp/Debug/juce-populate-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\F0D8EB9B3BF641C8945E039874C4717D\JUCE-POPULATE-INSTALL.RULE
+setlocal
+cd C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-jack\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/src/juce-populate-stamp/Debug/juce-populate-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\F0D8EB9B3BF641C8945E039874C4717D\JUCE-POPULATE-TEST.RULE
+setlocal
+cd C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-jack\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-build
+if %errorlevel% neq 0 goto :cmEnd
+C:
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/src/juce-populate-stamp/Debug/juce-populate-test
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\D24F774FA04B6FB3F2ED68D51F32F512\JUCE-POPULATE-COMPLETE.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -E make_directory C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/CMakeFiles/Debug
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/CMakeFiles/Debug/juce-populate-complete
+if %errorlevel% neq 0 goto :cmEnd
+"C:\Program Files\CMake\bin\cmake.exe" -E touch C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/juce-populate-prefix/src/juce-populate-stamp/Debug/juce-populate-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\B1B0E23F1EA495641F41016823590186\JUCE-POPULATE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-2D86CF2985A514FF\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild -BC:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild --check-stamp-file C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-subbuild/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

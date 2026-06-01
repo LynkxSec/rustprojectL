@@ -1,0 +1,10 @@
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\CRAZY-SAW-JACK\TARGET\DEBUG\BUILD\CXX-JUCE-9AE03A2950E10F87\OUT\BUILD\_DEPS\JUCE-SUBBUILD\CMAKEFILES\193B8C0B7437B76BE556B9B8E0461963\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild -BC:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-jack/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/juce-populate.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

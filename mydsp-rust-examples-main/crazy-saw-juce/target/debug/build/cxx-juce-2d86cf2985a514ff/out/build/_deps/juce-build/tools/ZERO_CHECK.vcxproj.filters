@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-jack\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-build\tools\CMakeFiles\46837cad034fd2f59aa8c8e176ab49cf\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{1992E196-01F9-3366-91A6-6DC7F4043565}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
