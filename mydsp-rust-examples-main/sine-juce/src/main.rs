@@ -1,4 +1,4 @@
-use std::{error::Error, sync::Arc, sync::LazyLock, thread::sleep, time::Duration};
+use std::{error::Error, sync::LazyLock, thread::sleep, time::Duration};
 
 use cxx_juce::{
     JUCE,
@@ -24,8 +24,8 @@ pub struct AudioConfig {
 impl Default for AudioConfig {
     fn default() -> Self {
         Self {
-            input_channels: 0_usize,
-            output_channels: 2_usize,
+            input_channels: 0,
+            output_channels: 2,
             sample_rate: 48_000.0,
             duration: Some(Duration::from_secs(2)),
         }
@@ -54,47 +54,95 @@ fn run_audio<C: AudioIODeviceCallback + 'static>(
 }
 
 // ---------------------------------------------------------------------------
-// DSP: sine tone
+// DSP: sine table
 // ---------------------------------------------------------------------------
 
 static TABLE: LazyLock<SineTable> = LazyLock::new(|| SineTable::new(16384));
 
-struct SineTone {
-    freq: f32,
-    my_sine: SineWave,
+type AudioCallback = Box<
+    dyn for<'a, 'b, 'c, 'd>
+        FnMut(&'a InputAudioSampleBuffer<'b>, &'c mut OutputAudioSampleBuffer<'d>)
+        + Send
+        + 'static,
+>;
+
+// ---------------------------------------------------------------------------
+// Generic backend (FnMut + HRTB)
+// ---------------------------------------------------------------------------
+
+struct GenericAudioBackend<T>
+where
+    T: for<'a, 'b, 'c, 'd>
+        FnMut(&'a InputAudioSampleBuffer<'b>, &'c mut OutputAudioSampleBuffer<'d>)
+        + Send
+        + 'static,
+{
+    callback: T,
 }
 
-impl AudioIODeviceCallback for SineTone {
+impl<T> GenericAudioBackend<T>
+where
+    T: for<'a, 'b, 'c, 'd>
+        FnMut(&'a InputAudioSampleBuffer<'b>, &'c mut OutputAudioSampleBuffer<'d>)
+        + Send
+        + 'static,
+{
+    fn new(callback: T) -> Self {
+        Self { callback }
+    }
+}
+
+impl<T> AudioIODeviceCallback for GenericAudioBackend<T>
+where
+    T: for<'a, 'b, 'c, 'd>
+        FnMut(&'a InputAudioSampleBuffer<'b>, &'c mut OutputAudioSampleBuffer<'d>)
+        + Send
+        + 'static,
+{
     fn about_to_start(&mut self, _device: &mut dyn AudioIODevice) {}
 
     fn process_block(
         &mut self,
-        _: &InputAudioSampleBuffer<'_>,
-        o: &mut OutputAudioSampleBuffer<'_>,
+        input: &InputAudioSampleBuffer<'_>,
+        output: &mut OutputAudioSampleBuffer<'_>,
     ) {
-        for n in 0..o.samples() {
-            let sample = self.my_sine.tick(0.0) * 0.5;
-            for c in 0..o.channels() {
-                o[c][n] = sample;
-            }
-        }
+        (self.callback)(input, output);
     }
 
     fn stopped(&mut self) {}
 }
 
 // ---------------------------------------------------------------------------
-// Entry point
+// Entry point — DSP lives here now
 // ---------------------------------------------------------------------------
 
 fn main() -> Result<(), Box<dyn Error>> {
     let config = AudioConfig::default();
 
-    let freq = 440.0;
+    // -----------------------------
+    // DSP STATE MOVED INTO MAIN()
+    // -----------------------------
     let mut sine = SineWave::new(&TABLE, config.sample_rate);
-    sine.set_freq(freq);
+    sine.set_freq(440.0);
 
-    run_audio(SineTone { freq, my_sine: sine }, &config)
+    // -----------------------------
+    // PROCESS BLOCK MOVED HERE
+    // -----------------------------
+    let callback: AudioCallback = Box::new(
+        move |_input, output| {
+            for n in 0..output.samples() {
+                let sample = sine.tick(0.0) * 0.5;
+
+                for c in 0..output.channels() {
+                    output[c][n] = sample;
+                }
+            }
+        }
+    );
+
+    let backend = GenericAudioBackend::new(callback);
+
+    run_audio(backend, &config)
 }
 
 #[test]
