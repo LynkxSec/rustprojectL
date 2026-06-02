@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"C:/Users/louis/Rust/mydsp-rust-examples-main/sine-juce/target/debug/build/cxx-juce-1304e0ae363c3da7/out/build/_deps/juce-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
