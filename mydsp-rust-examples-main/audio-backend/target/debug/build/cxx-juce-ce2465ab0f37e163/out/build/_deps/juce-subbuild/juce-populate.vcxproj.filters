@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\a422ae989a671e991a6b7871713da256\juce-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\a422ae989a671e991a6b7871713da256\juce-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\a422ae989a671e991a6b7871713da256\juce-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\a422ae989a671e991a6b7871713da256\juce-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\a422ae989a671e991a6b7871713da256\juce-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\a422ae989a671e991a6b7871713da256\juce-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\a422ae989a671e991a6b7871713da256\juce-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\a422ae989a671e991a6b7871713da256\juce-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\77117cf094b04e16da006b8b14462d85\juce-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\ecf8d90016df79654dcea934f88137e1\juce-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\juce-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F62C79C5-5D3C-3A42-8436-7BFE010A49D5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

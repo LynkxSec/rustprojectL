@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/louis/Rust/mydsp-rust-examples-main/audio-backend/target/debug/build/cxx-juce-ce2465ab0f37e163/out/build/cmake_install.cmake",
+		"C:/Users/louis/Rust/mydsp-rust-examples-main/audio-backend/target/debug/build/cxx-juce-ce2465ab0f37e163/out/build/_deps/juce-build/cmake_install.cmake",
+		"C:/Users/louis/Rust/mydsp-rust-examples-main/audio-backend/target/debug/build/cxx-juce-ce2465ab0f37e163/out/build/_deps/juce-build/modules/cmake_install.cmake",
+		"C:/Users/louis/Rust/mydsp-rust-examples-main/audio-backend/target/debug/build/cxx-juce-ce2465ab0f37e163/out/build/_deps/juce-build/extras/Build/cmake_install.cmake",
+		"C:/Users/louis/Rust/mydsp-rust-examples-main/audio-backend/target/debug/build/cxx-juce-ce2465ab0f37e163/out/build/_deps/juce-build/extras/Build/juceaide/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

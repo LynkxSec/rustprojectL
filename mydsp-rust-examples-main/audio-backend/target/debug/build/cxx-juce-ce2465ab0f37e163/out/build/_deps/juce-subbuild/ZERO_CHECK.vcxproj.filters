@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\ecf8d90016df79654dcea934f88137e1\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F62C79C5-5D3C-3A42-8436-7BFE010A49D5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

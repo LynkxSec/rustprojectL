@@ -1,0 +1,2 @@
+PlatformToolSet=v145:VCToolArchitecture=Native64Bit:VCToolsVersion=14.51.36231:VCServicingVersionCrtHeaders=14.51.36237:VCServicingVersionCompilers=14.51.36237:TargetPlatformVersion=10.0.26100.0:
+Debug|x64|C:\Users\louis\Rust\mydsp-rust-examples-main\audio-backend\target\debug\build\cxx-juce-ce2465ab0f37e163\out\build\_deps\juce-subbuild\CMakeFiles\4.3.1\|

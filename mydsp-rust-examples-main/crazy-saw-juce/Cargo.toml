@@ -1,5 +1,5 @@
 [package]
-name = "sine-juce"
+name = "sine-juce"     
 version = "0.1.0"
 edition = "2024"
 
@@ -9,3 +9,4 @@ cxx-juce = "0.8.0"
 mydsp-rust = { git = "https://github.com/inria-emeraude/mydsp-rust" }
 cmake = "0.1.58"
 rand = "0.9"
+audio-backend = { path = "C:/Users/Louis/Rust/mydsp-rust-examples-main/audio-backend" }
