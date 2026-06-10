@@ -4,7 +4,10 @@ version = "0.1.0"
 edition = "2024"
 
 [dependencies]
-console-subscriber = "0.5.0"
-cxx-juce = "0.8.0"
+audio-backend = { path = "../audio-backend" }
+
+rand = "0.9"
 mydsp-rust = { git = "https://github.com/inria-emeraude/mydsp-rust" }
+
+console-subscriber = "0.5.0"
 cmake = "0.1.58"

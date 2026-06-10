@@ -63,7 +63,7 @@ fn run_audio<C: AudioIODeviceCallback + 'static>(
 
 static TABLE: LazyLock<SineTable> = LazyLock::new(|| SineTable::new(16384));
 
-type AudioCallback = Box<
+type AudioCallback = Box
     dyn for<'a, 'b, 'c, 'd>
         FnMut(&'a InputAudioSampleBuffer<'b>, &'c mut OutputAudioSampleBuffer<'d>)
         + Send
