@@ -28,7 +28,7 @@ impl Default for AudioConfig {
             input_channels: 0,
             output_channels: 2,
             sample_rate: 48_000.0,
-            duration: Some(Duration::from_secs(5)),
+            duration: None, // run forever
         }
     }
 }

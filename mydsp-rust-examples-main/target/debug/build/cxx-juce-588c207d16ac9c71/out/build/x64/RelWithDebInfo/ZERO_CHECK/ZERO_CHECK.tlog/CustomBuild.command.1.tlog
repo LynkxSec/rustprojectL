@@ -1,0 +1,10 @@
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\TARGET\DEBUG\BUILD\CXX-JUCE-588C207D16AC9C71\OUT\BUILD\CMAKEFILES\BDB625E5BBBD2FB71A5F776D2B43B8DA\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/louis/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cxx-juce-0.8.0/bridge -BC:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-588c207d16ac9c71/out/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-588c207d16ac9c71/out/build/cxx-juce.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

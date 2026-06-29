@@ -1,0 +1,9 @@
+C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/CMakeFiles/cxx-juce.dir
+C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/CMakeFiles/INSTALL.dir
+C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-build/CMakeFiles/INSTALL.dir
+C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-build/CMakeFiles/ALL_BUILD.dir
+C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-build/modules/CMakeFiles/INSTALL.dir
+C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-build/extras/Build/CMakeFiles/INSTALL.dir
+C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-2d86cf2985a514ff/out/build/_deps/juce-build/extras/Build/juceaide/CMakeFiles/INSTALL.dir

@@ -1,0 +1,12 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-4.3/Modules/BasicConfigVersion-ExactVersion.cmake.in
+C:/Program Files/CMake/share/cmake-4.3/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-4.3/Modules/WriteBasicConfigVersionFile.cmake
+C:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-1cf39310911f472b/out/build/CMakeFiles/cmake.verify_globs
+C:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-1cf39310911f472b/out/build/_deps/juce-src/CMakeLists.txt
+C:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-1cf39310911f472b/out/build/_deps/juce-src/extras/Build/CMake/JUCECheckAtomic.cmake
+C:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-1cf39310911f472b/out/build/_deps/juce-src/extras/Build/CMake/JUCEConfig.cmake.in
+C:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-1cf39310911f472b/out/build/_deps/juce-src/extras/Build/CMake/JUCEHelperTargets.cmake
+C:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-1cf39310911f472b/out/build/_deps/juce-src/extras/Build/CMake/JUCEModuleSupport.cmake
+C:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-1cf39310911f472b/out/build/_deps/juce-src/extras/Build/CMake/JUCEUtils.cmake

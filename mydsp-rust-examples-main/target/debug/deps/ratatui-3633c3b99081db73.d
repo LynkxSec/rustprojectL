@@ -1,0 +1,10 @@
+C:\Users\louis\Rust\mydsp-rust-examples-main\target\debug\deps\ratatui-3633c3b99081db73.d: C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\lib.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\prelude.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\widgets.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\widgets\stateful_widget_ref.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\widgets\widget_ref.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\init.rs
+
+C:\Users\louis\Rust\mydsp-rust-examples-main\target\debug\deps\libratatui-3633c3b99081db73.rmeta: C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\lib.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\prelude.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\widgets.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\widgets\stateful_widget_ref.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\widgets\widget_ref.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\init.rs
+
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\lib.rs:
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\prelude.rs:
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\widgets.rs:
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\widgets\stateful_widget_ref.rs:
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\widgets\widget_ref.rs:
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-0.30.2\src\init.rs:

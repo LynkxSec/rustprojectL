@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\bda43422b205b56aaa16c1cfc7bc4a86\juce-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\bda43422b205b56aaa16c1cfc7bc4a86\juce-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\bda43422b205b56aaa16c1cfc7bc4a86\juce-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\bda43422b205b56aaa16c1cfc7bc4a86\juce-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\bda43422b205b56aaa16c1cfc7bc4a86\juce-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\bda43422b205b56aaa16c1cfc7bc4a86\juce-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\bda43422b205b56aaa16c1cfc7bc4a86\juce-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\bda43422b205b56aaa16c1cfc7bc4a86\juce-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\b098286c6f7b8078ccf0779ca3b98c56\juce-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\8a9875d1b197b8277f56276362d4a14a\juce-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\louis\Rust\mydsp-rust-examples-main\crazy-saw-juce\target\debug\build\cxx-juce-2d86cf2985a514ff\out\build\_deps\juce-subbuild\CMakeFiles\juce-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C650FAC0-F5AE-3BCE-8B14-938AE11E8FC7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

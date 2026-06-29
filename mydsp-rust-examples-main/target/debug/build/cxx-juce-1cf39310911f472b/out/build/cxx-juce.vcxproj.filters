@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_bindings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_basics\cxx_juce_iir_filter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_audio_callback_wrapper.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_audio_device_setup.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_audio_device_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_system_audio_volume.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_audio_io_device_type.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_audio_io_device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\Rust\mydsp-rust-examples-main\target\debug\build\cxx-juce-1cf39310911f472b\out\build\_deps\juce-src\modules\juce_audio_basics\juce_audio_basics.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\Rust\mydsp-rust-examples-main\target\debug\build\cxx-juce-1cf39310911f472b\out\build\_deps\juce-src\modules\juce_core\juce_core.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\Rust\mydsp-rust-examples-main\target\debug\build\cxx-juce-1cf39310911f472b\out\build\_deps\juce-src\modules\juce_audio_devices\juce_audio_devices.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\louis\Rust\mydsp-rust-examples-main\target\debug\build\cxx-juce-1cf39310911f472b\out\build\_deps\juce-src\modules\juce_events\juce_events.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_bindings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_basics\cxx_juce_iir_filter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_audio_callback_wrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_audio_device_setup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_audio_device_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_system_audio_volume.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_audio_io_device_type.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\cxx_juce_audio_devices\cxx_juce_audio_io_device.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\cxx-juce-0.8.0\bridge\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{B3206277-0E98-38E4-8FC4-B62878BE9067}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{45321627-6BB4-39FF-932E-AA537F82F798}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

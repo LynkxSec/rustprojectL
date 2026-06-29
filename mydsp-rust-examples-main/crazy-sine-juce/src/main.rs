@@ -1,175 +1,430 @@
-use std::{error::Error, sync::mpsc::channel, sync::LazyLock, thread::sleep, time::Duration};
-
-use cxx_juce::{
-    JUCE,
-    juce_audio_devices::{AudioDeviceManager, AudioIODevice, AudioIODeviceCallback},
+use std::{
+    io,
+    sync::{
+        Arc,
+        atomic::{AtomicBool, AtomicU32, Ordering},
+    },
+    thread::sleep,
+    time::Duration,
 };
-use cxx_juce::juce_audio_devices::{InputAudioSampleBuffer, OutputAudioSampleBuffer};
 
-use mydsp_rust::AudioComponent as _;
-use mydsp_rust::sine::SineWave;
-use mydsp_rust::sine_table::SineTable;
-use mydsp_rust::echo::Echo;
+use audio_backend::{AudioConfig, run_audio};
+
+use cxx_juce::juce_audio_devices::{
+    AudioIODevice,
+    AudioIODeviceCallback,
+    InputAudioSampleBuffer,
+    OutputAudioSampleBuffer,
+};
+
+use crossterm::{
+    event::{
+        self, DisableMouseCapture, EnableMouseCapture, Event, KeyCode,
+        KeyModifiers,
+    },
+    execute,
+    terminal::{
+        disable_raw_mode, enable_raw_mode, EnterAlternateScreen,
+        LeaveAlternateScreen,
+    },
+};
+
+use ratatui::{
+    backend::CrosstermBackend,
+    layout::{Constraint, Direction, Layout},
+    style::{Color, Modifier, Style},
+    text::{Line, Span},
+    widgets::{Block, Borders, Gauge, Paragraph},
+    Terminal,
+};
 
 use rand::Rng;
 
 // ---------------------------------------------------------------------------
-// Audio config
+// Atomic f32 helpers
 // ---------------------------------------------------------------------------
 
-pub struct AudioConfig {
-    pub input_channels: usize,
-    pub output_channels: usize,
-    pub sample_rate: f32,
-    pub duration: Option<Duration>,
+fn load_f32(atom: &AtomicU32) -> f32 {
+    f32::from_bits(atom.load(Ordering::Relaxed))
 }
 
-impl Default for AudioConfig {
-    fn default() -> Self {
+fn store_f32(atom: &AtomicU32, val: f32) {
+    atom.store(f32::to_bits(val), Ordering::Relaxed);
+}
+
+// ---------------------------------------------------------------------------
+// Shared DSP parameters
+// ---------------------------------------------------------------------------
+
+struct Params {
+    freq:           AtomicU32,
+    echo_feedback:  AtomicU32,
+    volume:         AtomicU32,
+    bypass:         AtomicBool,
+}
+
+impl Params {
+    fn new() -> Self {
         Self {
-            input_channels: 0,
-            output_channels: 2,
-            sample_rate: 48_000.0,
-            duration: None,
+            freq:           AtomicU32::new(f32::to_bits(440.0)),
+            echo_feedback:  AtomicU32::new(f32::to_bits(0.2)),
+            volume:         AtomicU32::new(f32::to_bits(0.8)),
+            bypass:         AtomicBool::new(false),
         }
     }
 }
 
 // ---------------------------------------------------------------------------
-// Generic audio runner (JUCE)
+// ECHO IMPLEMENTATION
 // ---------------------------------------------------------------------------
 
-fn run_audio<C: AudioIODeviceCallback + 'static>(
-    callback: C,
-    config: &AudioConfig,
-) -> Result<(), Box<dyn Error>> {
-    let juce = JUCE::initialise();
-    let mut adm = AudioDeviceManager::new(&juce);
-    adm.initialise(config.input_channels, config.output_channels)?;
+pub struct Echo {
+    buffer: Vec<f32>,
+    index: usize,
+    feedback: f32,
+}
 
-    let _handle = adm.add_audio_callback(callback);
-
-    match config.duration {
-        Some(dur) => sleep(dur),
-        None => loop { sleep(Duration::from_millis(100)); },
+impl Echo {
+    pub fn new(size: usize, feedback: f32) -> Self {
+        Self {
+            buffer: vec![0.0; size],
+            index: 0,
+            feedback: feedback.clamp(0.0, 0.99),
+        }
     }
 
-    Ok(())
-}
+    pub fn set_feedback(&mut self, fb: f32) {
+        self.feedback = fb.clamp(0.0, 0.99);
+    }
 
-// ---------------------------------------------------------------------------
-// DSP: sine + echo
-// ---------------------------------------------------------------------------
+    pub fn tick(&mut self, input: f32) -> f32 {
+        let delayed = self.buffer[self.index];
 
-static TABLE: LazyLock<SineTable> = LazyLock::new(|| SineTable::new(16384));
+        self.buffer[self.index] = input + delayed * self.feedback;
 
-type AudioCallback = Box<
-    dyn for<'a, 'b, 'c, 'd>
-        FnMut(&'a InputAudioSampleBuffer<'b>, &'c mut OutputAudioSampleBuffer<'d>)
-        + Send
-        + 'static,
->;
+        self.index += 1;
+        if self.index >= self.buffer.len() {
+            self.index = 0;
+        }
 
-// ---------------------------------------------------------------------------
-// Generic backend (FnMut + HRTB)
-// ---------------------------------------------------------------------------
-
-struct GenericAudioBackend<T>
-where
-    T: for<'a, 'b, 'c, 'd>
-        FnMut(&'a InputAudioSampleBuffer<'b>, &'c mut OutputAudioSampleBuffer<'d>)
-        + Send
-        + 'static,
-{
-    callback: T,
-}
-
-impl<T> GenericAudioBackend<T>
-where
-    T: for<'a, 'b, 'c, 'd>
-        FnMut(&'a InputAudioSampleBuffer<'b>, &'c mut OutputAudioSampleBuffer<'d>)
-        + Send
-        + 'static,
-{
-    fn new(callback: T) -> Self {
-        Self { callback }
+        delayed
     }
 }
 
-impl<T> AudioIODeviceCallback for GenericAudioBackend<T>
-where
-    T: for<'a, 'b, 'c, 'd>
-        FnMut(&'a InputAudioSampleBuffer<'b>, &'c mut OutputAudioSampleBuffer<'d>)
-        + Send
-        + 'static,
-{
+// ---------------------------------------------------------------------------
+// PHASOR OSCILLATOR
+// ---------------------------------------------------------------------------
+
+struct Phasor {
+    phase: f32,
+    phase_inc: f32,
+    sample_rate: f32,
+}
+
+impl Phasor {
+    pub fn new(_init: Option<f32>, sample_rate: f32) -> Self {
+        Self {
+            phase: 0.0,
+            phase_inc: 0.0,
+            sample_rate,
+        }
+    }
+
+    pub fn set_freq(&mut self, freq: f32) {
+        self.phase_inc = freq / self.sample_rate;
+    }
+
+    pub fn tick(&mut self, _input: f32) -> f32 {
+        let output = 2.0 * self.phase - 1.0;
+        self.phase += self.phase_inc;
+        if self.phase >= 1.0 {
+            self.phase -= 1.0;
+        }
+        output
+    }
+}
+
+// ---------------------------------------------------------------------------
+// DSP
+// ---------------------------------------------------------------------------
+
+struct MyDsp {
+    phasor: Phasor,
+    echo:   Echo,
+    params: Arc<Params>,
+
+    smoothed_feedback: f32,
+}
+
+impl AudioIODeviceCallback for MyDsp {
     fn about_to_start(&mut self, _device: &mut dyn AudioIODevice) {}
 
     fn process_block(
         &mut self,
-        input: &InputAudioSampleBuffer<'_>,
+        _input: &InputAudioSampleBuffer<'_>,
         output: &mut OutputAudioSampleBuffer<'_>,
     ) {
-        (self.callback)(input, output);
+        // Live parameter reads
+        self.phasor.set_freq(load_f32(&self.params.freq));
+
+        let volume = load_f32(&self.params.volume);
+        let bypass = self.params.bypass.load(Ordering::Relaxed);
+
+        // Live echo feedback smoothing
+        let target_feedback = load_f32(&self.params.echo_feedback);
+        let alpha = 0.005;
+
+        self.smoothed_feedback += alpha * (target_feedback - self.smoothed_feedback);
+        self.echo.set_feedback(self.smoothed_feedback);
+
+        // Audio processing
+        for n in 0..output.samples() {
+            let sample = if bypass {
+                0.0
+            } else {
+                let phase = self.phasor.tick(0.0);
+                let sine  = (phase * std::f32::consts::TAU).sin();
+                self.echo.tick(sine * volume)
+            };
+
+            for c in 0..output.channels() {
+                output[c][n] = sample;
+            }
+        }
     }
 
     fn stopped(&mut self) {}
 }
 
 // ---------------------------------------------------------------------------
-// JUCE version of `mydsp_run`
+// TUI slider
 // ---------------------------------------------------------------------------
 
-fn main() -> Result<(), Box<dyn Error>> {
-    let config = AudioConfig {
-        duration: Some(Duration::from_secs(5)),
-        ..AudioConfig::default()
-    };
+struct Slider {
+    label: &'static str,
+    unit:  &'static str,
+    value: f32,
+    min:   f32,
+    max:   f32,
+    step:  f32,
+    write: fn(&Params, f32),
+}
 
-    let (tx, rx) = channel::<f32>();
+impl Slider {
+    fn ratio(&self) -> f64 {
+        ((self.value - self.min) / (self.max - self.min))
+            .clamp(0.0, 1.0) as f64
+    }
 
-    // DSP state (was in JACK callback)
-    let mut sine = SineWave::new(&TABLE, config.sample_rate);
-    sine.set_freq(440.0);
+    fn inc(&mut self, fast: bool) {
+        let s = if fast { self.step * 10.0 } else { self.step };
+        self.value = (self.value + s).min(self.max);
+    }
 
-    let mut echo = Echo::new(10000, 0.5);
+    fn dec(&mut self, fast: bool) {
+        let s = if fast { self.step * 10.0 } else { self.step };
+        self.value = (self.value - s).max(self.min);
+    }
+}
 
-    // JUCE audio callback
-    let callback: AudioCallback = Box::new(
-        move |_input, output| {
-            // Drain frequency updates
-            while let Ok(freq) = rx.try_recv() {
-                sine.set_freq(freq);
-            }
+struct App {
+    sliders: Vec<Slider>,
+    selected: usize,
+}
 
-            for n in 0..output.samples() {
-                let sample = echo.tick(sine.tick(0.0) * 0.5) as f32;
-
-                for c in 0..output.channels() {
-                    output[c][n] = sample;
-                }
-            }
+impl App {
+    fn new() -> Self {
+        Self {
+            sliders: vec![
+                Slider {
+                    label: "Frequency (base)",
+                    unit: "Hz",
+                    value: 440.0,
+                    min: 20.0,
+                    max: 2000.0,
+                    step: 10.0,
+                    write: |p, v| store_f32(&p.freq, v),
+                },
+                Slider {
+                    label: "Echo Feedback",
+                    unit: "",
+                    value: 0.2,
+                    min: 0.0,
+                    max: 0.99,
+                    step: 0.01,
+                    write: |p, v| store_f32(&p.echo_feedback, v),
+                },
+                Slider {
+                    label: "Volume",
+                    unit: "",
+                    value: 0.8,
+                    min: 0.0,
+                    max: 1.0,
+                    step: 0.01,
+                    write: |p, v| store_f32(&p.volume, v),
+                },
+            ],
+            selected: 0,
         }
-    );
+    }
+}
 
-    let backend = GenericAudioBackend::new(callback);
+// ---------------------------------------------------------------------------
+// TUI rendering
+// ---------------------------------------------------------------------------
 
-    // Frequency randomizer (was the JACK control loop)
+fn draw(frame: &mut ratatui::Frame, app: &App, _bypass: bool) {
+    let constraints: Vec<Constraint> = app
+        .sliders
+        .iter()
+        .map(|_| Constraint::Length(4))
+        .chain([Constraint::Min(1)])
+        .collect();
+
+    let chunks = Layout::default()
+        .direction(Direction::Vertical)
+        .margin(1)
+        .constraints(constraints)
+        .split(frame.area());
+
+    for (i, slider) in app.sliders.iter().enumerate() {
+        let active = i == app.selected;
+
+        let color = if active { Color::Cyan } else { Color::Gray };
+
+        let style = if active {
+            Style::default().fg(Color::Cyan).add_modifier(Modifier::BOLD)
+        } else {
+            Style::default().fg(Color::White)
+        };
+
+        let label = if slider.unit.is_empty() {
+            format!("{:.2}", slider.value)
+        } else {
+            format!("{:.1} {}", slider.value, slider.unit)
+        };
+
+        let gauge = Gauge::default()
+            .block(
+                Block::default()
+                    .title(Span::styled(format!(" {} ", slider.label), style))
+                    .borders(Borders::ALL)
+                    .border_style(Style::default().fg(color)),
+            )
+            .gauge_style(Style::default().fg(color).bg(Color::DarkGray))
+            .ratio(slider.ratio())
+            .label(label);
+
+        frame.render_widget(gauge, chunks[i]);
+    }
+
+ let help = Paragraph::new(Line::from(vec![
+        Span::styled("↑ ↓",        Style::default().fg(Color::Yellow)),
+        Span::raw(": select  "),
+        Span::styled("← →",        Style::default().fg(Color::Yellow)),
+        Span::raw(": adjust  "),
+        Span::styled("Shift+← →",  Style::default().fg(Color::Yellow)),
+        Span::raw(": coarse  "),
+        Span::styled("q / Esc",    Style::default().fg(Color::Yellow)),
+        Span::raw(": quit"),
+    ]));
+
+    frame.render_widget(help, chunks[app.sliders.len()]);
+}
+
+// ---------------------------------------------------------------------------
+// Entry point
+// ---------------------------------------------------------------------------
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let config = AudioConfig::default();
+
+    let params = Arc::new(Params::new());
+    let params_tui = Arc::clone(&params);
+    let params_mod = Arc::clone(&params);
+
+    // Random modulation thread (frequency)
     std::thread::spawn(move || {
-        let mut rng = rand::thread_rng();
+        let mut rng = rand::rng();
         let range = 200.0_f32..2000.0_f32;
         let sleep_duration = Duration::from_millis(100);
 
         loop {
-            let freq = rng.gen_range(range.clone());
-            if tx.send(freq).is_err() {
-                break;
-            }
+            let freq = rng.random_range(range.clone());
+            store_f32(&params_mod.freq, freq);
             sleep(sleep_duration);
         }
     });
 
-    run_audio(backend, &config)
+    // TUI thread
+    std::thread::spawn(move || {
+        enable_raw_mode().unwrap();
+
+        let mut stdout = io::stdout();
+        execute!(stdout, EnterAlternateScreen, EnableMouseCapture).unwrap();
+
+        let backend = CrosstermBackend::new(stdout);
+        let mut terminal = Terminal::new(backend).unwrap();
+
+        let mut app = App::new();
+
+        loop {
+            let bypass = params_tui.bypass.load(Ordering::Relaxed);
+
+            terminal.draw(|f| draw(f, &app, bypass)).unwrap();
+
+            if event::poll(Duration::from_millis(16)).unwrap() {
+                if let Event::Key(key) = event::read().unwrap() {
+                    let fast = key.modifiers.contains(KeyModifiers::SHIFT);
+                    let sel = app.selected;
+
+                    match key.code {
+                        KeyCode::Right => {
+                            app.sliders[sel].inc(fast);
+                            (app.sliders[sel].write)(&params_tui, app.sliders[sel].value);
+                        }
+                        KeyCode::Left => {
+                            app.sliders[sel].dec(fast);
+                            (app.sliders[sel].write)(&params_tui, app.sliders[sel].value);
+                        }
+                        KeyCode::Down => {
+                            app.selected = (sel + 1) % app.sliders.len();
+                        }
+                        KeyCode::Up => {
+                            app.selected = (sel + app.sliders.len() - 1) % app.sliders.len();
+                        }
+                        KeyCode::Char('b') => {
+                            let state = params_tui.bypass.load(Ordering::Relaxed);
+                            params_tui.bypass.store(!state, Ordering::Relaxed);
+                        }
+                        KeyCode::Char('q') | KeyCode::Esc => {
+                            disable_raw_mode().unwrap();
+                            execute!(
+                                terminal.backend_mut(),
+                                LeaveAlternateScreen,
+                                DisableMouseCapture,
+                            )
+                            .unwrap();
+                            terminal.show_cursor().unwrap();
+                            std::process::exit(0);
+                        }
+                        _ => {}
+                    }
+                }
+            }
+        }
+    });
+
+let dsp = MyDsp {
+        phasor: Phasor::new(None, config.sample_rate),
+        echo: Echo::new(10000, 0.5),
+        params: Arc::clone(&params),
+        smoothed_feedback: 0.5,
+    };
+
+    run_audio(dsp, &config)?;
+
+    Ok(())
 }
 
 #[test]

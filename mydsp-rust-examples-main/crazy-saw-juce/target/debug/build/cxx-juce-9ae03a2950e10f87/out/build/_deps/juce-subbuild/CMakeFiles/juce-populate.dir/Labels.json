@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/juce-populate"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/d4b9da52a1ea72abbbe6cd2fd62f3bd7/juce-populate.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/a937ac52777da08e3d14870187ebf718/juce-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/a876b76d002ccab1d87cbcf68fd7565d/juce-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/a876b76d002ccab1d87cbcf68fd7565d/juce-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/a876b76d002ccab1d87cbcf68fd7565d/juce-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/a876b76d002ccab1d87cbcf68fd7565d/juce-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/a876b76d002ccab1d87cbcf68fd7565d/juce-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/a876b76d002ccab1d87cbcf68fd7565d/juce-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/a876b76d002ccab1d87cbcf68fd7565d/juce-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/louis/Rust/mydsp-rust-examples-main/crazy-saw-juce/target/debug/build/cxx-juce-9ae03a2950e10f87/out/build/_deps/juce-subbuild/CMakeFiles/a876b76d002ccab1d87cbcf68fd7565d/juce-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"juce-populate"
+		],
+		"name" : "juce-populate"
+	}
+}

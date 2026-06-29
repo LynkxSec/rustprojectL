@@ -1,0 +1,8 @@
+warning: unused manifest key: build
+help: build is a valid .cargo/config.toml key
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on package cache
+    Blocking waiting for file lock on shared package cache
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 1.04s

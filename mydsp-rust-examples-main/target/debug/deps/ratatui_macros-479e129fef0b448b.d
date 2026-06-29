@@ -1,0 +1,10 @@
+C:\Users\louis\Rust\mydsp-rust-examples-main\target\debug\deps\ratatui_macros-479e129fef0b448b.d: C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\lib.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\layout.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\line.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\row.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\span.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\text.rs
+
+C:\Users\louis\Rust\mydsp-rust-examples-main\target\debug\deps\libratatui_macros-479e129fef0b448b.rmeta: C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\lib.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\layout.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\line.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\row.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\span.rs C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\text.rs
+
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\lib.rs:
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\layout.rs:
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\line.rs:
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\row.rs:
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\span.rs:
+C:\Users\louis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\ratatui-macros-0.7.2\src\text.rs:

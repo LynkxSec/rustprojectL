@@ -4,4 +4,8 @@ resolver = "3"
 members = [
     "audio-backend",
     "sine-juce",
+    "crazy-saw-juce",
+    "crazy-sine-juce",
+    "bypass-juce",
+    "echo-juce",
 ]

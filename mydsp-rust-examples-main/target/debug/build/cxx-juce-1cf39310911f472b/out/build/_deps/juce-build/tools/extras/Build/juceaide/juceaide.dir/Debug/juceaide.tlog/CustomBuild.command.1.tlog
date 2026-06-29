@@ -1,0 +1,10 @@
+^C:\USERS\LOUIS\RUST\MYDSP-RUST-EXAMPLES-MAIN\TARGET\DEBUG\BUILD\CXX-JUCE-1CF39310911F472B\OUT\BUILD\_DEPS\JUCE-SRC\EXTRAS\BUILD\JUCEAIDE\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-1cf39310911f472b/out/build/_deps/juce-src -BC:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-1cf39310911f472b/out/build/_deps/juce-build/tools --check-stamp-file C:/Users/louis/Rust/mydsp-rust-examples-main/target/debug/build/cxx-juce-1cf39310911f472b/out/build/_deps/juce-build/tools/extras/Build/juceaide/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

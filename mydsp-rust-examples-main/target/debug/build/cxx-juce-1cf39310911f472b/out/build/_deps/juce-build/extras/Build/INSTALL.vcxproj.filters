@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\louis\Rust\mydsp-rust-examples-main\target\debug\build\cxx-juce-1cf39310911f472b\out\build\CMakeFiles\df65bcfd7b8407bec7de3a43fd28fba1\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{2B3B2D8D-102F-345C-BC55-793AB6A2F67A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
